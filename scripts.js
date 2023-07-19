@@ -24,11 +24,11 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container: "map",
   projection: "globe",
-  style: "mapbox://styles/chriswhongmapbox/cl5wwjkj4001214lfkquw73l3",
-  zoom: 1.9466794621990684,
-  center: { lng: 12.563530000000014, lat: 58.27372323078674 },
-  pitch: 70,
-  bearing: 0,
+  style: "mapbox://styles/jiles/clk9utqez036x01pa0pjf9z9b",
+  zoom: -73.672270,
+  center: { lng: -73.673, lat: 40.961723},
+  pitch: 78.50,
+  bearing: 174.40,
 });
 
 window.map = map
@@ -76,7 +76,7 @@ map.on("load", async () => {
 
 
   // fetch the geojson for the linestring to be animated
-  const trackGeojson = await fetch(`./data/movie-${\d}.geojson`).then((d) =>
+  const trackGeojson = await fetch(`./Playland_Onscreen_Maps/movie-${\d+}.geojson`).then((d) =>
     d.json()
   );
   // kick off the animations
@@ -84,15 +84,6 @@ map.on("load", async () => {
   // stop recording
   map.off('render', frame);
   mapboxgl.restoreNow();
-
-  if (prod) {
-    // download the encoded video file
-    const mp4 = encoder.end();
-    const anchor = document.createElement("a");
-    anchor.href = URL.createObjectURL(new Blob([mp4], { type: "video/mp4" }));
-    anchor.download = `stage_${stage}_${gender}${square ? '_square' : ''}`;
-    anchor.click();
-  }
 
 });
 
@@ -141,12 +132,12 @@ const playAnimations = async (trackGeojson) => {
       map,
       targetLngLat,
       duration: prod ? 7000 : 5000,
-      startAltitude: 3000000,
-      endAltitude: 12000,
+      startAltitude: 3000,
+      endAltitude: 1000,
       startBearing: 0,
-      endBearing: -20,
+      endBearing: 174,
       startPitch: 40,
-      endPitch: 50,
+      endPitch: 80,
       prod
     });
 
