@@ -55,26 +55,6 @@ map.on("load", async () => {
     rgbFlipY: true
   });
 
-  // stub performance.now for deterministic rendering per-frame (only available in dev build)
-  let now = performance.now();
-  mapboxgl.setNow(now);
-
-  const ptr = encoder.getRGBPointer(); // keep a pointer to encoder WebAssembly heap memory
-
-  function frame() {
-    // increment stub time by 16.6ms (60 fps)
-    now += 1000 / 60;
-    mapboxgl.setNow(now);
-
-    const pixels = encoder.memory().subarray(ptr); // get a view into encoder memory
-    gl.readPixels(0, 0, width, height, gl.RGBA, gl.UNSIGNED_BYTE, pixels); // read pixels into encoder
-    encoder.encodeRGBPointer(); // encode the frame
-  }
-
-  map.on('render', frame); // set up frame-by-frame recording
-
-
-
   // fetch the geojson for the linestring to be animated
   const trackGeojson = await fetch(`./Playland_Onscreen_Maps/movie-${\d+}.geojson`).then((d) =>
     d.json()
