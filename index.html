@@ -6,9 +6,11 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
 </style>
 </head>
 <body>
@@ -46,7 +48,7 @@ margin-bottom: 200px;
 <div id="features">
 <section id="Lovers&Lollipops" class="active">
 <h3>Lovers & Lollipops</h3>
-<p>Playland's debut in movies came from a little-known film from 1956 called Lovers & Loollipops, both criticized and praised for showcases the realistic mundanity of a courtship between a widow and an engineer. At Playland the couple  </p>
+<p>Playland's debut in movies came from a little-known film from 1956 called Lovers & Loollipops, both criticized and praised for showcasing the realistic mundanity of a courtship between a widow and an engineer. At Playland, Larry and Peggy, the child, walk to the boardwalk and then, joined by Ann, Peggy's mother, go to the beach. The three swim and then leave. It is not the most dynamic scene, but Larry gives Peggy a bunch of lollipops she drops in the sea, giving the film it's title. The two leave after Peggy goes into the water unattended and Ann gets upset Larry wants her to met his father and not mention Peggy's existence. </p>
     
 </section>
 <section id="Muppets">
@@ -79,18 +81,19 @@ Sweet and Lowdown was Woody Allen's first film that used Playland as a shoot loc
 Easily the worst movie shot at Playland, this meandering thriller with a formulaic plot and boring twist seems be mirrored by the characters' long repetitive looping of the amusement park. In the film, newly released murderer teen Eric Komenko, played by Jon Foster, wanders around the park aimlessly until his date, Maria, arrives. Lori, who loves Eric unrequitedly, lurks in the background, wandering the park dejectedly while Eric and Maria go on rides. As Lori rides the Dragon Coaster, she spots cops hiding in the bushes near Eric and Maria on a deserted beach and runs to warn him that the date is a set-up by Lieutenant Detective Critofuoro played by Russell Crowe to catch Eric murdering again. He detains Lori, who is underage, before letting the two leave. The film had more shots than any other of Playland, but largely because it just followed the characters aimlessly wandering, and had a number of very short shots. The actual path the characters would have had to walk to get all of these shots in sequence would have been extremely nonsensical and tiring, as the plotted path shows. </p>  
 </section>
     
-<section id="The Family Fang">
+<section id="TheFamilyFang">
 <h3>The Family Fang</h3>
 <p>
 In this film, Playland serves as the setting for a family of performance artists to stage a comeback of sorts. Annie and Baxter, played by Nicole Kidman and Jason Bateman, are the adult children of a husband and wife conceptual performance art couple, played by Maryanne Plunkett and Christopher Walken. The two are famous for their quirky macabre public performances, and their children have never got over the way their parents used them throughout their childhood in their often gory and disturbing satirical public performances. Begrudgingly, the two find themselves holding a camera at Playland's food court to record their parents latest work. The work goes awry when the Playland chicken shack accepts the fake coupons, created and handed out by Caleb, for a free sandwich with no protest, and Caleb attempts to get them not to accept the coupons before leaving the park, frustrated the performance did not go as planned. The movie also used Playland in the Home VCR of a past performance art where Baxter and Anne alert lifeguards at Playland Beach their mother has been buried alive in the sand, or "Sand Smother" as Caleb calls it. I chose not to map this as it was not a scene but a fleeting media consumed by characters. The scene actually uses very little of Playland's art deco visuals save for a shot of Camille and Caleb beneath the characteristic turquoise colonnade of Playland's walkways.</p>
 </p>
 </section>
 
-<section id="The Americans">
-<h3>The Americans episode "The Day After</h3>
+<section id="TheAmericans">
+<h3>The Americans episode "The Day After"</h3>
 <p>The 9th episode of the 4th season of the drama about American embedded Soviet spies opened with a scene of Paige, played by Holly Taylor, learning to drive with her father Phillip, played by Matthew Rhys. Set in 1983, the Skyflyer a ride added to Playland in 2004 looks a little out of place. However, as many teens in my hometown can attest it is <i>the</i> parking lot to learn to drive in, so on balace a pretty accurate setting. </i> b</p>
+</section>
 
-<section id="Wonder-wheel">
+<section id="WonderWheel">
 <h3>Wonder Wheel</h3>
 
 <p>Playland's superficial similarities beyond the obvious to Coney Island stem largely from the fact the two parks were created by the same man, Frank Darling. Darling hired an architechtural firm and landscape architect, after experiencing the chaos of creating Coney Island without one, making the park the first in the country to have been built according to plan. </p>
@@ -98,21 +101,95 @@ In this film, Playland serves as the setting for a family of performance artists
 
 </section>
 
-<section id="Jessica Jones">
-<h3>Jessica Jones episode "AKA Playland</h3>
+<section id="JessicaJones">
+<h3>Jessica Jones episode <i>AKA Playland</i></h3>
 <p>As the name of the episode suggests, Playland is heavily featured here, it is the site of a body dumping, main character's death, and season climax, cementing Playland's spot in the Marvel Universe. The second season of Jessica Jones had alluded to a "place [Jessica's] family would vacation in the summer" frequently. Low and behold this place was Playland. On the run from the law, Jessica, played by Krysten Ritter, and her mother Alisa, played by Janet McTeer, go to Playland. The two break in after hours and ride the Ferris wheel, though they were supposed to be fleeing the country, it is Alisa's attempts to free Jessica of having to protect her by baiting the cops to find her. Instead Trish Walker, Jessica's oldest friend and newly minted superhero, played by Rachael Taylor, shoots Alisa from below, as she was a danger to the public, unable to control her superpower strength and temper. Jessica is found on the ferris wheel with her dead mother and police assumed she killed her. This episode made the most of the view from the Ferris wheel in a way only Orange is the New Black, also a Netflix show, did. It was also the only time Playland was referenced in easter eggs and family photos early in the season. </p>
 
-<section id="Orange is the New Black">
-<h3>Orange is the New Black episode "I'm the Talking Ass"</h3>
+</section>
+
+<section id="OrangeIsTheNewBlack">
+<h3>Orange is the New Black episode <i>I'm the Talking Ass</i></h3>
 <p>Season 6 episode 4, inmate Tiffany Doggett, played by Taryn Manning, Charlie Coates, played by James McMenamin, and Lee Dixon, played by Mike Houston have escaped the prison riot and are enjoying a day out in "Hershey Park". From afar, it would seem as if they were two men and a little boy, but the little boy is Tiffany Doggett in disguise. In the episode, Dogget wins a large bear shooting ducks, the three ride the Derby Racer, Log Flume and Ferris Wheel and end the day confronting homophobic park-goers near the exit. All in all they appear to have done a day at Playland the most efficiently and aside from the gross Log Flume and missing the Dragon Coaster and Spaceship3000, hit the best rides.</p>
-    
+</section>
+<section id="Empty Space trigger">
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+	<p> </p>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+</br>
+</br>
+<p></p>
+	</section>
+
 </div>
 <script>
 	mapboxgl.accessToken = "pk.eyJ1IjoiamlsZXMiLCJhIjoiY2xqZWU4YW80MGFucjNldGV4aTA4NHNweSJ9.Th_S0foelYl0FLXtSDfGjQ";
 const map = new mapboxgl.Map({
 container: 'map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'https://api.mapbox.com/styles/v1/jiles/clk9utqez036x01pa0pjf9z9b.html?title=copy&access_token=pk.eyJ1IjoiamlsZXMiLCJhIjoiY2xqZWU4YW80MGFucjNldGV4aTA4NHNweSJ9.Th_S0foelYl0FLXtSDfGjQ&zoomwheel=true&fresh=true#15.67/40.961723/-73.67227/174.4/79',
+style: 'mapbox://styles/mapbox/streets-v12',
 center: [-73.672270, 40.961723],
 zoom: 15.67,
 bearing: 
@@ -120,7 +197,7 @@ bearing:
 pitch: 
 78.50
 });
- 
+
 const chapters = {
 'Lovers&Lollipops': {
 bearing: 16.80,
@@ -135,28 +212,30 @@ center: [-73.672059, 40.968629],
 bearing: 16.8,
 zoom: 17,
 pitch: 
-70.00
+70.00,
+speed: 5
 },
 'FatalAttraction': {
 bearing: -163.20,
 center: [-73.673679, 40.967498],
 zoom: 17,
-speed: 0.6,
 pitch: 
-57.50
+57.50,
+speed: 5
 },
 'Big': {
 bearing: -160.00,
 center: [-73.673806, 40.965454],
 zoom: 16.00,
-pitch: 52.50
+pitch: 52.50,
+speed: 2
 },
 'Sweet&Lowdown': {
 bearing: 0,
 center: [-73.676495, 40.963637],
 zoom: 15.36,
 pitch: 18.5,
-speed: 0.5
+speed: 10
 },
 'Tenderness': {
 bearing: 32,
@@ -165,42 +244,42 @@ zoom: 16.36,
 pitch: 
 37.00
 },
-'The Family Fang': {
+'TheFamilyFang': {
 bearing: 32,
 center: [-73.674445, 40.967051],
 zoom: 17.36,
 pitch: 37
 },
-'The Americans': {
+'TheAmericans': {
 bearing: 
 -174.40,
 center: [-73.672723, 40.964309],
 zoom: 16.36,
 pitch: 62.5
 },
-'Wonder-wheel': {
+'WonderWheel': {
 bearing: 
 -174.40,
 center: [-73.672723, 40.964309],
 zoom: 16.36,
 pitch: 62.5
 },
-'Jessica Jones': {
+'JessicaJones': {
 bearing: -174.40,
 center: [-73.672723, 40.964309],
 zoom: 16.36,
 pitch: 62.5
-}
-'Orange is the New Black': {
+},
+'OrangeIsTheNewBlack': {
 bearing: 
--174.40,
+-170,
 center: [-73.672723, 40.964309],
 zoom: 16.36,
 pitch: 62.5
 }
 
 };
- 
+//SCROLLY CODE 
 let activeChapterName = 'Lovers&Lollipops';
 function setActiveChapter(chapterName) {
 if (chapterName === activeChapterName) return;
@@ -214,20 +293,64 @@ activeChapterName = chapterName;
 }
  
 function isElementOnScreen(id) {
-const element = document.getElementById(id);
-const bounds = element.getBoundingClientRect();
-return bounds.top < window.innerHeight && bounds.bottom > 0;
+	const element = document.getElementById(id);
+	const bounds = element.getBoundingClientRect();
+	return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
  
-// On every scroll event, check which element is on screen
+// On every scroll event, check which element is on screen//then display relevant route
 window.onscroll = () => {
-for (const chapterName in chapters) {
-if (isElementOnScreen(chapterName)) {
-setActiveChapter(chapterName);
-break;
-}
-}
+	for (const chapterName in chapters) {
+		if (isElementOnScreen(chapterName)) {
+			setActiveChapter(chapterName);
+			map.on('load'), () => {
+				route === ("./Playland_Onscreen_Maps/"+chapterName+".geojson");
+				map.addSource('route', route);
+				map.addLayer(
+					{ 
+						id: "route",
+						type: 'symbol',
+						source: 'route',
+						layout: {
+							'symbol-placement': 'line',
+							'text-field': 'GONZO',
+							'text-size':['interpolate',['linear'],['zoom'], 12, 24, 22, 60],
+							'symbol-spacing': ['interpolate', ['linear'], ['zoom'], 12, 65],
+							'text-rotation-alignment': 'map',
+        					'text-keep-upright': false,
+        					'text-allow-overlap': true,
+        					'visibility': 'visible',
+      					},
+						paint: {
+							'text-color' : 'red',
+							'text-halo-color': 'hsl(55, 11%, 96%)',
+							'text-halo-width': 2,
+      					},
+					},
+					'waterway-label'
+				);
+				map.addLayer({
+					id:'route-line',
+					type: 'line',
+					source: 'route',
+					layout: {
+						'line-join': 'round',
+						'line-cap': 'round',
+						'visibility': 'none',
+					},
+					paint: {
+						'line-color': "white",
+						'line-width': 5,
+
+					},
+				});
+
+    		}
+		break;}
+	}
 };
+	
+
 </script>
  
 </body>
