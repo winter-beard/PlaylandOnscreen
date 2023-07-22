@@ -85,8 +85,7 @@ img {
 <div class="section">			
 <img src = "Playland.svg"> alt = "An image of Tom Hanks staring at Zoltar the mechanical fortune teller on Playland's boardwalk. A photoshopped image of hands holding a movie clapper is collaged in the lower corner with Playland's logo across the top"</img> 
 <p>Built in 1928, just prior to the Great Depression in Rye, New York, Playland amusement park's art deco features and inherent nostalgia has made it an unexpected easter egg in many feature films.</p>    
-<p> Dragon Coaster has been ridden by madwoman Alex Forrest during her manic kidnapping of Ellen Gallagher in Fatal Attraction, and Tom Hank's man-child Josh in Big. It was the site of a failed sting operation by Russell Crowe's Lieutenant Cristofuoro in pretty bad thriller Tenderness. More recently it's been recurring feature in Netflix series', where in Orange is the New Black's sixth season it was a rare moment of levity for the characters that had escaped the increasingly dark prison revolt, and Playland entered the Marvel Universe with it's name intact in Jessica Jones' season 2 finale.</p>
-</div>
+
 <div id="map"></div>
 <div id="features">
 <section id="Lovers&Lollipops" class="active">
@@ -232,7 +231,7 @@ In this film, Playland serves as the setting for a family of performance artists
 const map = new mapboxgl.Map({
 container: 'map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'mapbox://styles/mapbox/streets-v12',
+style: 'mapbox://styles/jiles/clk9utqez036x01pa0pjf9z9b',
 center: [-73.672270, 40.961723],
 zoom: 15.67,
 bearing: 
@@ -243,6 +242,7 @@ pitch:
 
 const chapters = {
 'Lovers&Lollipops': {
+duration: 7000,
 bearing: 16.80,
 center: [-73.675248, 40.967681],
 zoom: 16.00,
@@ -259,7 +259,7 @@ pitch:
 speed: 5
 },
 'FatalAttraction': {
-duration: 6000,
+duration: 12000,
 bearing: -163.20,
 center: [-73.673679, 40.967498],
 zoom: 17,
@@ -276,7 +276,7 @@ pitch: 52.50,
 speed: 2
 },
 'Sweet&Lowdown': {
-duration: 6000,
+duration: 12000,
 bearing: 0,
 center: [-73.676495, 40.963637],
 zoom: 15.36,
@@ -301,10 +301,10 @@ pitch: 37
 'TheAmericans': {
 duration: 6000,
 bearing: 
--174.40,
-center: [-73.672723, 40.964309],
+85.6,
+center: [-73.673014, 40.966934],
 zoom: 16.36,
-pitch: 62.5
+pitch: 63.5
 },
 'WonderWheel': {
 duration: 6000,
