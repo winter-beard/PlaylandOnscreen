@@ -11,8 +11,7 @@
 body { margin: 0; padding: 0; font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
     background-color: #efebe8;
     color: #323a40; }
-#map { position: relative; top: 250; bottom: 0; width: 100%; }
-<style>
+#map { position: absolute; margin: 0, top: 250; bottom: 0; width: 100%; }
 			
 			@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 
@@ -34,13 +33,11 @@ body { margin: 0; padding: 0; font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 			}
 	
-		</style>
 </style>
 </head>
-<body>
 <style>
 #map {
-position: relative;
+position: fixed;
 width: 50%;
 }
 #features {
@@ -69,7 +66,6 @@ p {
     font-size: 20px;
     line-height: 1.7;
     font-family: 'Crimson Pro';
-
 }
 
 .section {
@@ -80,12 +76,35 @@ p {
 img {
     max-width: 100%
 }
+.intro {
+    margin: 0 auto;
+    font-family: 'Homemade Apple';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    padding-bottom: 0
+}
+
+.intro .byline {
+    font-family: 'Homemade Apple';
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px
+}
 
 </style>
-<div class="section">			
-<img src = "Playland.svg"> alt = "An image of Tom Hanks staring at Zoltar the mechanical fortune teller on Playland's boardwalk. A photoshopped image of hands holding a movie clapper is collaged in the lower corner with Playland's logo across the top"</img> 
-<p>Built in 1928, just prior to the Great Depression in Rye, New York, Playland amusement park's art deco features and inherent nostalgia has made it an unexpected easter egg in many feature films.</p>    
-
+<body>
+<div class="section">
+			<div class="chart">
+				<br/>
+				<img src = "Playland.svg" alt = "An image of Tom Hanks staring at Zoltar the mechanical fortune teller on Playland's boardwalk. A photoshopped image of hands holding a movie clapper is collaged in the lower corner with Playland's logo across the top"></img> 
+			</div>
+			<div class="intro">
+				<p class="big">Playland amusement park in Movies (&tv)</p>
+				<p class="byline">Julie Iles</p>
+				<p>Built in 1928, just prior to the Great Depression in Rye, New York, Playland amusement park's art deco features and inherent nostalgia has made it an unexpected easter egg in many feature films.</p>    
+			</div>	
+		
 <div id="map"></div>
 <div id="features">
 <section id="Lovers&Lollipops" class="active">
