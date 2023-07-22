@@ -8,9 +8,33 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 <style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+body { margin: 0; padding: 0; font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
+    background-color: #efebe8;
+    color: #323a40; }
+#map { position: absolute; top: 250; bottom: 0; width: 100%; }
+<style>
+			
+			@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 
+			@font-face {
+				font-family: 'Crimson Pro';
+				font-style: normal;
+				font-weight: 200 900;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/crimsonpro/v21/q5uDsoa5M_tv7IihmnkabARboYE.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+
+			@font-face {
+				font-family: 'Adelle Sans';
+				font-style: normal;
+				font-weight: 200 900;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/crimsonpro/v21/q5uDsoa5M_tv7IihmnkabARboYE.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+	
+		</style>
 </style>
 </head>
 <body>
@@ -22,7 +46,7 @@ width: 50%;
 #features {
 width: 50%;
 margin-left: 50%;
-font-family: sans-serif;
+font-family: Crimson Pro;
 overflow-y: scroll;
 background-color: #fafafa;
 }
@@ -40,12 +64,29 @@ section:last-child {
 border-bottom: none;
 margin-bottom: 200px;
 }
- 
+p {
+    margin: 1.5rem 0;
+    font-size: 20px;
+    line-height: 1.7;
+    font-family: 'Crimson Pro';
+
+}
+
+.section {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%
+}
+
 </style>
+<div class="section">			
 <img src = "Playland.svg"> alt = "An image of Tom Hanks staring at Zoltar the mechanical fortune teller on Playland's boardwalk. A photoshopped image of hands holding a movie clapper is collaged in the lower corner with Playland's logo across the top"</img> 
 <p>Built in 1928, just prior to the Great Depression in Rye, New York, Playland amusement park's art deco features and inherent nostalgia has made it an unexpected easter egg in many feature films.</p>    
 <p> Dragon Coaster has been ridden by madwoman Alex Forrest during her manic kidnapping of Ellen Gallagher in Fatal Attraction, and Tom Hank's man-child Josh in Big. It was the site of a failed sting operation by Russell Crowe's Lieutenant Cristofuoro in pretty bad thriller Tenderness. More recently it's been recurring feature in Netflix series', where in Orange is the New Black's sixth season it was a rare moment of levity for the characters that had escaped the increasingly dark prison revolt, and Playland entered the Marvel Universe with it's name intact in Jessica Jones' season 2 finale.</p>
- 
+</div>
 <div id="map"></div>
 <div id="features">
 <section id="Lovers&Lollipops" class="active">
