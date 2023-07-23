@@ -8,8 +8,7 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 <style>
-body { margin: 0; padding: 0; font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
-    background-color: #efebe8;
+body { background-color: #efebe8;
     color: #323a40; }
 #map { position: absolute; margin: 0; top: 250; bottom: 0; width: 100%; }
 			
@@ -66,17 +65,19 @@ p {
     font-size: 20px;
     line-height: 1.7;
     font-family: 'Crimson Pro';
+	
 }
 
 .section {
     max-width: 760px;
-    margin: 0 auto;
+    margin: 0 auto; padding: 0; font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
 }
 
 img {
     max-width: 100%
 }
 .intro {
+    font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
     margin: 0 auto;
     font-family: 'Homemade Apple';
     -webkit-font-smoothing: antialiased;
@@ -90,6 +91,7 @@ img {
     font-size: 16px;
     font-weight: 600;
     margin-top: 20px
+font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
 }
 
 </style>
