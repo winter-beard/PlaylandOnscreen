@@ -9,7 +9,7 @@
 <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 <style>
 body { margin: 0; padding: 0; }
-#map { position: absolute; top: 150px; bottom: 0; width: 100%; }
+#map { position: absolute; top: 81px; bottom: 0; width: 100%; }
 
 </style>
 </head>
@@ -20,13 +20,15 @@ position: fixed;
 width: 50%;
 }
 #features {
-width: 50%;
+top: 500px;
+width: 25%;
 margin-left: 50%;
 font-family: Cambria;
 overflow-y: scroll;
 background-color: #fafafa;
 }
 section {
+top: 500px;
 padding: 25px 50px;
 line-height: 25px;
 border-bottom: 1px solid #ddd;
@@ -40,9 +42,21 @@ section:last-child {
 border-bottom: none;
 margin-bottom: 200px;
 }
+p {
+margin: 1.5rem 0;
+font-size: 20px;
+line-height: 1.7;
+font-family: 'Crimson Pro';
+	
+}
+img {
+max-width: 100%
+}
 
 </style>
 <img src = "Title_Playland.svg" alt = "Text reads Playland Onscreen, The routes and rides fictional characters took around a small Westchester amusement park. Overlaid over blue sky and the top half of a ferris wheel.></img>
+
+	
 <p>Built in 1928, just prior to the Great Depression in Rye, New York, Playland amusement park's art deco features and inherent nostalgia has made it an unexpected easter egg in many feature films.</p>    
 
  
@@ -361,9 +375,9 @@ window.onscroll = () => {
 		break;}
 	}
 };
+<p>
 <img src= "graphic.svg" alt = "A bar graph over the supports of a Ferris Wheel, each bar showing which movie characters walked the furthest distance around Playland, Tenderness characters walked 3.4 miles, while most others walked .6 miles. Gonzo and The Americans had the shortest stint at the Park, with less than .1 miles." ></img>
-	
-
+	</p>
 </script>
  
 </body>
