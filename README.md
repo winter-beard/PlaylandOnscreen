@@ -1,6 +1,12 @@
 # PlaylandOnscreen
 A map of the character paths of films and TV episodes shot at Rye, Playland. 
+Findings: Woody Allen is weirdly obsessed with amusement parks and characters with monotonous lives within them, the way movies are shot at Playland makes no sense with layout of park, movie characters do not know what the best rides are.
 
+Data collection: Hand drawn paths based off watching movies and tv shows and knowing park really well. 
+Mapbox: https://studio.mapbox.com/styles/jiles/clk9utqez036x01pa0pjf9z9b/edit/#15.29/40.96538/-73.670514/83.2/64
+MyMaps: https://www.google.com/maps/d/edit?mid=1EzruZOz6cK9GvobH2xghmReHxB6RekE&usp=sharing
+Movies:
+https://www.imdb.com/search/title/?locations=Rye%20Playland%2C%20Rye%2C%20New%20York%2C%20USA&ref_=tt_dt_loc
 
 Things I learned: HTML style coding for embedded rectangles, images, scrolly elements, basically lots of this, FigJam, Mapbox, Javascript scripting for interactivity, scrolly coding for a Mapbox entity, removing backgrounds and creating image from the collage. 
 
