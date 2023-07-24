@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -8,124 +8,293 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 <style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 950px; bottom: 0; width: 100%; }
+#body { margin: 0; padding: 0; }
+#map { position: absolute; top: 81px; bottom: 0; width: 100%; }
 
 </style>
 </head>
-<body>
+
 <style>
-#map {
+	@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+
+
+@font-face {
+	font-family: 'Adelle Sans';
+	font-style: normal;
+	font-weight: 200 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/Edu+SA+Beginner/v21/q5uDsoa5M_tv7IihmnkabARboYE.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+#map { 
 position: fixed;
 width: 50%;
+padding: 25px 50px; 
 }
 #features {
 top: 500px;
 width: 25%;
 margin-left: 50%;
-font-family: Cambria;
+font-family: 'Edu SA Beginner';
 overflow-y: scroll;
 background-color: #fafafa;
 }
 section {
-top: 500px;
+position: relative;
+top:500px;
+margin-left:60%;
 padding: 25px 50px;
 line-height: 25px;
 border-bottom: 1px solid #ddd;
 opacity: 0.25;
-font-size: 13px;
+font-family: 'Edu SA Beginner';
+font-size: 20px;
+font-style: bold
 }
 section.active {
+top: 500px;
 opacity: 1;
 }
 section:last-child {
+top: 500px;
 border-bottom: none;
 margin-bottom: 200px;
 }
 p {
-margin: 1.5rem 0;
-font-size: 20px;
-line-height: 1.7;
-font-family: 'Crimson Pro';
+    margin: 1.5rem 0;
+    font-size: 20px;
+    line-height: 1.7;
+    font-family: 'Edu SA Beginner';
 	
 }
-img {
-max-width: 100%
+.title img {
+    max-width: 100%;
+	position: relative;
+  	top: 0;
+  	left: 50%;
+  	transform: translateX(-50%);
+  	max-width: 100%;
+  	z-index: 1; /* Make sure the image is on top of other elements */
+}
+.color-rectangle1 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #08d419; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle2 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #da0afa; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle3 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #ea7e0b; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle4 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #2613f6; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle5 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #def81b; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle6 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #fb3737; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle7 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #22f7f0; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
 }
 
+.color-rectangle8 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #000000; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle9 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #fdd3f0; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle10 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #6800fa; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+.color-rectangle11 {
+  width: 50px; 
+  height: 100px; 
+  background-color: #25c0f8; 
+  display: inline-block; /* This ensures it's displayed as an inline element next to the text */
+  margin-right: 10px; 
+}
+h3 {
+	display: inline-block; /* Display the text block as an inline element */
+  	vertical-align: top;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; /* Make sure the image container is on top of the map */
+  background-color: #fff; /* Optional: Add a background color for better visibility */
+  padding: 20px 0; /* Optional: Add some padding to the image container */
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 200px; /* Set the maximum height of the image to avoid excessive space */
+}
 </style>
+<body>
 
-
-<div>  <img src = "Title_Playland.svg" alt = "Text reads Playland Onscreen, The routes and rides fictional characters took around a small Westchester amusement park. Overlaid over blue sky and the top half of a ferris wheel.></img>
-<p>Built in 1928, just prior to the Great Depression in Rye, New York, Playland amusement park's art deco features and inherent nostalgia has made it an unexpected easter egg in many feature films.</p>    
-
-	</div>
 <div id="map"></div>
+<div class = title>
+	<img src = "Title_Playland.svg" alt = "Text reads Playland Onscreen, The routes and rides fictional characters took around a small Westchester amusement park. Overlaid over blue sky and the top half of a ferris wheel.></img>
+</div>
+
 <div id="features">
 <section id="Lovers&Lollipops" class="active">
+	<div class="color-rectangle1"></div>
 <h3>Lovers & Lollipops</h3>
-<p>Playland's debut in movies came from a little-known film from 1956 called Lovers & Loollipops, both criticized and praised for showcasing the realistic mundanity of a courtship between a widow and an engineer. At Playland, Larry and Peggy, the child, walk to the boardwalk and then, joined by Ann, Peggy's mother, go to the beach. The three swim and then leave. It is not the most dynamic scene, but Larry gives Peggy a bunch of lollipops she drops in the sea, giving the film it's title. The two leave after Peggy goes into the water unattended and Ann gets upset Larry wants her to met his father and not mention Peggy's existence. </p>
+<p>Playland's debut in movies came from a little-known film from 1956 called Lovers & Lollipops, both criticized and praised for showcasing the realistic mundanity of a courtship between a widow and an engineer.</p> 
+<p></p>
+	<p>At Playland, Larry and Peggy, the child, walk to the boardwalk and then, joined by Ann, Peggy's mother, go to the beach. The three swim and then leave. </p>
+		<p></p>
+		<p>It is not the most dynamic scene, but Larry gives Peggy a bunch of lollipops she drops in the sea, giving the film it's title. </p>
     
 </section>
 <section id="Muppets">
+	<div class="color-rectangle2"></div>
 <h3>The Muppets Take Manhattan</h3>
-<p>Nearly 30 years after its first feature on the silver screen, The Muppets resurfaced Playland as a film destination in the 1984 film 'The Muppets Take Manhattan'. The scene begins with Kermit reading a letter from Gonzo, who is allegedly writing from an 'aquacade' in Michigan. It flashes to Gonzo, known for his enthusiasm for performance art and stunt performances, about to perform a high-flying water-skiing trapeze through obstacles littered across Playland Lake, towed by his choir of chickens performing Tony Bennett covers. Gonzo's long flowing headdress gets in his eyes causing him to mistime his stunt and land in the water where he is dragged behind his boat full of chickens across the lake.</p>
+<p>Nearly 30 years after its first feature on the silver screen, The Muppets resurfaced Playland as a film destination in the 1984 film 'The Muppets Take Manhattan'. </p>
+<p></p>
+<p>The scene shows Gonzo, a blue muppet known for his enthusiasm for performance art and stunt performances, about to perform a high-flying water-skiing trapeze through obstacles littered across Playland Lake, towed by his choir of chickens performing Tony Bennett covers. Gonzo's long flowing headdress gets in his eyes causing him to mistime his stunt and land in the water where he is dragged behind his boat full of chickens across the lake.</p>
+<p></p>
+<p>In the movie, Gonzo is supposedly in an aquacade in Michigan far from the rest of the gang's Manhattan addventures. Really he is much closer to his fellow puppets, only 36 minutes by train.</p>
 
 
 </section>
 <section id="FatalAttraction">
+	<div class="color-rectangle3"></div>
 <h3>Fatal Attraction</h3>
 <p>
-When Glenn Close's crazy jilted lover kidnappers her lover's child and takes her for a joyride at an amusement park - the characteristic wooden beams and tunnel into the belly of the beast of Playland's Dragon Coaster are unmistakable. The ride is one of only 10 wooden rollercoasters in America, and despite headlines a few years ago of rotting wood - is still running. In the movie, Close's Alex appears serene as the ride tosses her and her young companion around. The scene is interspersed with Susan Gallagher, the child's mother who becomes increasingly frantic, driving and looking for her child. With Fatal Attraction set in Bedford, Westchester, it is one of the few instances Playland's setting in Rye would also make sense as a destination for the characters.
+ In the movie, Glenn Close's Alex appears serene as the ride jostles her and her young companion, the kidnapped daughter of her lover. The scene is interspersed with Susan Gallagher, the child's mother who becomes increasingly frantic, driving and looking for her child. </p>
+ <p></p>
+ <p>With Fatal Attraction set in Bedford, Westchester, it is one of the few instances Playland's setting in Rye would also make sense as a destination for the characters.
 </p>
 </section>
 <section id="Big">
+	<div class="color-rectangle4"></div>
 <h3>Big</h3>
 <p>
-Perhaps the most popular movie ever to feature Playland was Penny Marshall's Big. The iconic scene of Tom Hanks making a second wish to the mechanical fortune-teller Zoltare on Playland's boardwalk, looms large in the Playland canon. It is however the second scene of the movie set there. Shortly prior to that on a date, Tom Hank's Josh Baskin and Elizabeth Perkins' Susan go to the amusement park and ride the Dragon Coaster, before chatting on the boardwalk and heading home walking past the not-so-subtle Zoltar box, which is now the site of an Aquafina vending machine. In the scene where Tom Hanks' Josh Baskin wishes for his boyhood back, the sequencing of the shots actually makes the a nonsensical route from the parks entrance to get to the Zoltar machine. As it is shot, Hanks would have run a full-circle around the entrance fountain and ended up back closer to where the taxi dropped him off on the boardwalk. The same is said of how Emily Perkins' Susan was shot running there. </p>
+Perhaps the most popular movie ever to feature Playland was Penny Marshall's Big. The iconic scene of Tom Hanks making a second wish to the mechanical fortune-teller Zoltare on Playland's boardwalk, looms large in the Playland canon. It is however the second scene of the movie set there. Shortly prior to that on a date, Tom Hank's Josh Baskin and Elizabeth Perkins' Susan go to the amusement park and ride the Dragon Coaster, before chatting on the boardwalk and heading home.</p>
+<p></p> 
+<p>In the scene where Tom Hanks' Josh Baskin wishes for his boyhood back, the sequencing of the shots actually makes the a nonsensical route from the parks entrance to get to the Zoltar machine. As it is shot, Hanks would have run a full-circle around the entrance fountain and ended up back closer to where the taxi dropped him off on the boardwalk. </p>
 
 </section>
 <section id="Sweet&Lowdown">
+	<div class="color-rectangle5"></div>
 <h3>Sweet & Lowdown</h3>
 <p>
-Sweet and Lowdown was Woody Allen's first film that used Playland as a shoot location, though he would return 18 years later, to shoot a movie he had no idea would suffer immensely from a re-reckoning of his past. In 1999, the Sweet and Lowdown actually does the best in my opinion of capturing Playland at its most cinematic, shooting the movie's final scene during the misty mornings when the boardwalk is largely deserted. Allen used the Park significantly as of a New Jersey resort hotel, where Sean Penn's Emmett Ray, a jazz guitarist, begrudgingly goes on a double date with a mute laundress Samantha Morton's Hattie, who works there. Ray eventually breaks things off with Hattie, hoping to be artistically free, returning years later to get her back and discovering she's happily married. From a long-winding double date that spans more of the park more than any other movie, to the laudry's setting nestled beneath the roller coaster, the film makes much use of the park's geography. From Annie Hall, to Wonder Wheel, to his stand-up material and Sweet and Lowdown, Allen appears to have a big thing for living in the shadows of rollercoasters. Probably because he is a creep.  
+Sweet and Lowdown was Woody Allen's first film that used Playland as a shoot location, though not the only one. The movie actually does the best, in my opinion, of capturing Playland at its most cinematic, shooting the movie's final scene during a misty morning when the boardwalk is largely deserted. </p>
+<p>Allen used the Park significantly as the set of a New Jersey resort hotel, where Sean Penn's Emmett Ray, a jazz guitarist, begrudgingly goes on a double date with a mute laundress Samantha Morton's Hattie, who works there.</p>
+<p></p> 
+<p>Ray eventually breaks things off with Hattie, hoping to be artistically free, returning years later to get her back and discovering she's happily married. </p>
+<p>From a long-winding double date that spans more of the park more than any other movie, to the laudry's setting nestled beneath the roller coaster, the film makes much use of the park's geography.</p> 
 </p>
 </section>
 <section id="Tenderness">
+	<div class="color-rectangle6"></div>
 <h3>Tenderness</h3>
 <p>
-Easily the worst movie shot at Playland, this meandering thriller with a formulaic plot and boring twist seems be mirrored by the characters' long repetitive looping of the amusement park. In the film, newly released murderer teen Eric Komenko, played by Jon Foster, wanders around the park aimlessly until his date, Maria, arrives. Lori, who loves Eric unrequitedly, lurks in the background, wandering the park dejectedly while Eric and Maria go on rides. As Lori rides the Dragon Coaster, she spots cops hiding in the bushes near Eric and Maria on a deserted beach and runs to warn him that the date is a set-up by Lieutenant Detective Critofuoro played by Russell Crowe to catch Eric murdering again. He detains Lori, who is underage, before letting the two leave. The film had more shots than any other of Playland, but largely because it just followed the characters aimlessly wandering, and had a number of very short shots. The actual path the characters would have had to walk to get all of these shots in sequence would have been extremely nonsensical and tiring, as the plotted path shows. </p>  
+This meandering thriller with a formulaic plot and boring twist seems be mirrored by the characters' long repetitive looping of the amusement park.</p>
+<p></p>
+<p>In the film, newly released murderer teen Eric Komenko, played by Jon Foster, wanders around the park aimlessly until his date, Maria, arrives. Lori, who loves Eric unrequitedly, lurks in the background, wandering the park dejectedly while Eric and Maria go on rides. </p>
+<p></p>
+<p>The film had more shots than any other of Playland, but largely because it just followed the characters aimlessly wandering, and had a number of very short shots. The actual path the characters would have had to walk to get all of these shots in sequence would have been extremely nonsensical and tiring, as the plotted path shows. </p>  
 </section>
     
 <section id="TheFamilyFang">
+	<div class="color-rectangle7"></div>
 <h3>The Family Fang</h3>
 <p>
-In this film, Playland serves as the setting for a family of performance artists to stage a comeback of sorts. Annie and Baxter, played by Nicole Kidman and Jason Bateman, are the adult children of a husband and wife conceptual performance art couple, played by Maryanne Plunkett and Christopher Walken. The two are famous for their quirky macabre public performances, and their children have never got over the way their parents used them throughout their childhood in their often gory and disturbing satirical public performances. Begrudgingly, the two find themselves holding a camera at Playland's food court to record their parents latest work. The work goes awry when the Playland chicken shack accepts the fake coupons, created and handed out by Caleb, for a free sandwich with no protest, and Caleb attempts to get them not to accept the coupons before leaving the park, frustrated the performance did not go as planned. The movie also used Playland in the Home VCR of a past performance art where Baxter and Anne alert lifeguards at Playland Beach their mother has been buried alive in the sand, or "Sand Smother" as Caleb calls it. I chose not to map this as it was not a scene but a fleeting media consumed by characters. The scene actually uses very little of Playland's art deco visuals save for a shot of Camille and Caleb beneath the characteristic turquoise colonnade of Playland's walkways.</p>
-</p>
+In this film, Playland serves as the setting for a family of performance artists to stage a comeback of sorts. </p>
+<p></p>
+<p>Annie and Baxter, played by Nicole Kidman and Jason Bateman, are the adult children of a husband and wife conceptual performance art couple, played by Maryanne Plunkett and Christopher Walken. </p>
+<p></p>
+<p>Begrudgingly, the two children find themselves holding a camera at Playland's food court to record their parents latest work. The performance goes awry and they all leave.</p> 
+<p></p>
+<p>The scene actually uses very little of Playland's art deco visuals save for a shot of Camille and Caleb beneath the characteristic turquoise colonnade of Playland's walkways.</p>
+
 </section>
 
 <section id="TheAmericans">
+	<div class="color-rectangle8"></div>
 <h3>The Americans episode "The Day After"</h3>
-<p>The 9th episode of the 4th season of the drama about American embedded Soviet spies opened with a scene of Paige, played by Holly Taylor, learning to drive with her father Phillip, played by Matthew Rhys. Set in 1983, the Skyflyer a ride added to Playland in 2004 looks a little out of place. However, as many teens in my hometown can attest it is <i>the</i> parking lot to learn to drive in, so on balace a pretty accurate setting. </i> b</p>
+<p>The 9th episode of the 4th season of the drama about Soviet spies embedded in suburbia opened with a scene of Paige, played by Holly Taylor, learning to drive with her father Phillip, played by Matthew Rhys.</p>
+<p></p>
+<p>Set in 1983, the Skyflyer a ride added to Playland in 2004 looks a little out of place. However, as many teens in my hometown can attest it is <i>the</i> parking lot to learn to drive in, so on balace a pretty accurate setting.</p>
 </section>
 
 <section id="WonderWheel">
+	<div class="color-rectangle9"></div>
 <h3>Wonder Wheel</h3>
 
-<p>Playland's superficial similarities beyond the obvious to Coney Island stem largely from the fact the two parks were created by the same man, Frank Darling. Darling hired an architechtural firm and landscape architect, after experiencing the chaos of creating Coney Island without one, making the park the first in the country to have been built according to plan. </p>
-<p>This similarity to Coney Island has caused the Park to play its understudy in Woody Allen's 2017 film Wonder Wheel. Despite being set in Coney Island, Allen shot all the scene's of the husband of the film's protaganist, working as a carousel operator, at Playland. He also used the pier to shoot Humpty and his friend's fishing, a daily routine. Despite starring Kate Winslet, and being Amazong's first solo distribution film, the film struggled to get into theaters, Business Insider reported, earning only $10.4m on a $25m budget.  It was released at the dawn of the Me Too movement, and shortly after its release, his adopted daughter Dylan Farrow called out actors still working with Allen in an editorial in the LA Times. Farrow has maintained Allen sexually abused her since the 1990s. Yet Allen still made a movie about a man falling in love with his lover's step-daughter. </p>
+<p>In Woody Allen's 2017 film Wonder Wheel, Playland played Coney Island's understudy. Allen shot all the scenes of one character, Humpty, who worked as a carousel operator, at Playland. He also used the pier to shoot Humpty and his friend's fishing, a daily routine.</p>
+<p></p> 
+<p>The film struggled to get into theaters, Business Insider <a href = "https://www.businessinsider.com/amazon-reportedly-considering-ending-woody-allen-deal-had-trouble-with-wonder-wheel-2018-1">reported</a>, earning only $10.4m on a $25m budget.  It was released at the dawn of the Me Too movement, and shortly after its release, Allen's adopted daughter Dylan Farrow called out actors still working with Allen in an editorial in the LA Times. Farrow has maintained Allen sexually abused her since the 1990s.</p>
 
 </section>
 
 <section id="JessicaJones">
+	<div class="color-rectangle10"></div>
 <h3>Jessica Jones episode <i>AKA Playland</i></h3>
-<p>As the name of the episode suggests, Playland is heavily featured here, it is the site of a body dumping, main character's death, and season climax, cementing Playland's spot in the Marvel Universe. The second season of Jessica Jones had alluded to a "place [Jessica's] family would vacation in the summer" frequently. Low and behold this place was Playland. On the run from the law, Jessica, played by Krysten Ritter, and her mother Alisa, played by Janet McTeer, go to Playland. The two break in after hours and ride the Ferris wheel, though they were supposed to be fleeing the country, it is Alisa's attempts to free Jessica of having to protect her by baiting the cops to find her. Instead Trish Walker, Jessica's oldest friend and newly minted superhero, played by Rachael Taylor, shoots Alisa from below, as she was a danger to the public, unable to control her superpower strength and temper. Jessica is found on the ferris wheel with her dead mother and police assumed she killed her. This episode made the most of the view from the Ferris wheel in a way only Orange is the New Black, also a Netflix show, did. It was also the only time Playland was referenced in easter eggs and family photos early in the season. </p>
+<p>As the name of the episode suggests, Playland is heavily featured here, it is the site of a body dumping, main character's death, and season climax, cementing Playland's spot in the Marvel Universe.</p>
+<p></p>
+<p>Jessica, played by Krysten Ritter, and her mother Alisa, played by Janet McTeer, go to Playland. The two break in after hours and ride the Ferris wheel, though they were supposed to be fleeing the country, it is Alisa's attempts to free Jessica of having to protect her by baiting the cops to find her. Instead Trish Walker, Jessica's oldest friend and newly minted superhero, played by Rachael Taylor, shoots Alisa from below. </p>
 
 </section>
 
 <section id="OrangeIsTheNewBlack">
+	<div class="color-rectangle11"></div>
 <h3>Orange is the New Black episode <i>I'm the Talking Ass</i></h3>
-<p>Season 6 episode 4, inmate Tiffany Doggett, played by Taryn Manning, Charlie Coates, played by James McMenamin, and Lee Dixon, played by Mike Houston have escaped the prison riot and are enjoying a day out in "Hershey Park". From afar, it would seem as if they were two men and a little boy, but the little boy is Tiffany Doggett in disguise. In the episode, Dogget wins a large bear shooting ducks, the three ride the Derby Racer, Log Flume and Ferris Wheel and end the day confronting homophobic park-goers near the exit. All in all they appear to have done a day at Playland the most efficiently and aside from the gross Log Flume and missing the Dragon Coaster and Spaceship3000, hit the best rides.</p>
+<p>Season 6 episode 4, inmate Tiffany Doggett, played by Taryn Manning, Charlie Coates, played by James McMenamin, and Lee Dixon, played by Mike Houston have escaped the prison riot and are enjoying a day out in "Hershey Park". From afar, it would seem as if they were two men and a teenage boy, but the teenage boy is Doggett in disguise.</p>
+<p></p>
+<p>In the episode, Dogget wins a large bear shooting ducks, the three ride the Derby Racer, Log Flume and Ferris Wheel and end the day confronting homophobic park-goers near the exit.</p>
+<p></p> 
+<p>All in all they appear to have done a day at Playland the most efficiently and aside from going on the gross Log Flume and missing the Dragon Coaster and Spaceship3000, hit the best rides.</p>
 </section>
 <section id="Empty Space trigger">
 	<p> </p>
@@ -160,7 +329,6 @@ In this film, Playland serves as the setting for a family of performance artists
 	<p> </p>
 	<p> </p>
 	<p> </p>
-	
 </br>
 </br>
 </br>
@@ -198,7 +366,6 @@ In this film, Playland serves as the setting for a family of performance artists
 </br>
 </br>
 <p></p>
-
 	</section>
 
 </div>
@@ -378,7 +545,11 @@ window.onscroll = () => {
 	}
 };
 
-</script>
- 
+
+</script>	
+<div class = image-container>
+	<img src = "graphic.svg" alt = "Text reads Playland Onscreen, The routes and rides fictional characters took around a small Westchester amusement park. Overlaid over blue sky and the top half of a ferris wheel.></img>
+
+</div>
 </body>
 </html>
