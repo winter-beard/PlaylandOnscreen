@@ -75,7 +75,7 @@ p {
   	left: 50%;
   	transform: translateX(-50%);
   	max-width: 100%;
-  	z-index: 1; /* Make sure the image is on top of other elements */
+  	z-index: 1; 
 }
 .color-rectangle1 {
   width: 50px; 
@@ -159,23 +159,7 @@ h3 {
 	display: inline-block; /* Display the text block as an inline element */
   	vertical-align: top;
 }
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1; /* Make sure the image container is on top of the map */
-  background-color: #fff; /* Optional: Add a background color for better visibility */
-  padding: 20px 0; /* Optional: Add some padding to the image container */
-}
 
-.image-container img {
-  max-width: 100%;
-  max-height: 200px; /* Set the maximum height of the image to avoid excessive space */
-}
 </style>
 <body>
 
@@ -183,7 +167,6 @@ h3 {
 <div class = title>
 	<img src = "Title_Playland.svg" alt = "Text reads Playland Onscreen, The routes and rides fictional characters took around a small Westchester amusement park. Overlaid over blue sky and the top half of a ferris wheel.></img>
 </div>
-
 <div id="features">
 <section id="Lovers&Lollipops" class="active">
 	<div class="color-rectangle1"></div>
